@@ -1,0 +1,6 @@
+.job-profile-container {
+  background-color: #7fd3c8;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+}
