@@ -1,9 +1,10 @@
 .get-products-details-container {
-  background-color: #000000;
+  background-color: #7fd3c8;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 90vh;
 }
 .full-job-item-container {
   display: flex;
@@ -18,7 +19,7 @@
   margin-top: 200px;
 }
 .job-items-container {
-  background-color: #202020;
+  background-color: #0e88a7;
   border-radius: 15px;
   margin-bottom: 25px;
   padding: 45px;

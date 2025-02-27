@@ -4,9 +4,13 @@
   justify-content: center;
   width: 30%;
   margin-bottom: 50px;
+ 
 }
 .skill-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+   background-color: #048c96c7;
 }
 .skill-image {
   width: 60px;

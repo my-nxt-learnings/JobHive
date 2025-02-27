@@ -22,10 +22,10 @@ const Header = props => {
       </div>
       <ul className="header-list-items">
         <Link to="/" className="link-item">
-          <li className="home-heading home">Home</li>
+          Home
         </Link>
         <Link to="/jobs" className="link-item">
-          <li className="jon-heading home">Jobs</li>
+          Jobs
         </Link>
       </ul>
       <div>

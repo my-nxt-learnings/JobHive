@@ -71,6 +71,7 @@ class JobProfileSection extends Component {
 
     const jwtToken = Cookies.get('jwt_token')
     const {salaryRange, employmentType, searchInput} = this.state
+    console.log(employmentType)
     const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType.join()}&minimum_package=${salaryRange}&search=${searchInput}`
     const options = {
       headers: {
@@ -107,7 +108,7 @@ class JobProfileSection extends Component {
     this.setState({searchInput: event.target.value})
   }
 
-  onKeyDown = event => {
+  onEnterKey = event => {
     if (event.key === 'Enter') {
       this.getJobDetails()
     }
@@ -118,10 +119,15 @@ class JobProfileSection extends Component {
   }
 
   changeEmploymentType = type => {
-    this.setState(
-      prev => ({employmentType: [...prev.employmentType, type]}),
-      this.getJobDetails,
-    )
+    const {employmentType} = this.state
+    const isTypePresent = employmentType.filter(each => each === type)
+    let updatedList
+    if (isTypePresent.length === 1) {
+      updatedList = employmentType.filter(each => each !== type)
+    } else {
+      updatedList = [...employmentType, type]
+    }
+    this.setState({employmentType: [...updatedList]}, this.getJobDetails)
   }
 
   renderJobDetails = () => {
@@ -141,7 +147,7 @@ class JobProfileSection extends Component {
           />
           <button
             type="button"
-            testid="searchButton"
+            data-testid="searchButton"
             className="search-button"
             onClick={this.getJobDetails}
           >
@@ -167,7 +173,7 @@ class JobProfileSection extends Component {
           />
           <button
             type="button"
-            testid="searchButton"
+            data-testid="searchButton"
             className="search-button"
             onClick={this.getJobDetails}
           >
@@ -200,7 +206,7 @@ class JobProfileSection extends Component {
       </p>
       <button
         type="button"
-        testid="button"
+        data-testid="button"
         className="jobs-failure-button"
         onClick={this.getJobDetails}
       >
@@ -210,7 +216,7 @@ class JobProfileSection extends Component {
   )
 
   renderLoadingView = () => (
-    <div className="profile-loader-container" testid="loader">
+    <div className="profile-loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )

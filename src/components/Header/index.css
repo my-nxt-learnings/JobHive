@@ -39,5 +39,8 @@
 }
 .link-item {
   text-decoration: none;
-  color: black;
+  color: rgb(3, 21, 48);
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0px 30px 0px 30px;
 }

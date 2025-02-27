@@ -20,6 +20,10 @@
 .salary-container {
   display: flex;
   flex-direction: column;
+  background-color: #037786;
+  padding: 5px 10px 0px 30px;
+  border-radius: 20px;
+  margin: 10px 0px 10px 0px;
 }
 .checkbox-list-items {
   display: flex;

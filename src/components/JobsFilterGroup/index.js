@@ -7,9 +7,9 @@ const JobsFilterGroup = props => {
 
     return employmentTypesList.map(employ => {
       const {changeEmploymentType} = props
-      const onChangeEmployType = event =>
+      const onChangeEmployType = event => {
         changeEmploymentType(event.target.value)
-
+      }
       return (
         <li
           className="checkbox-list-items"
