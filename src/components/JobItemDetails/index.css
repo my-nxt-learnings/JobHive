@@ -122,7 +122,6 @@
   line-height: 2;
 }
 
-
 .skill-heading {
   font-size: 24px;
   color: #fff;
@@ -140,8 +139,8 @@
 }
 
 @media screen and (max-width: 600px) {
-  .skill-container{
-    display:flex;
+  .skill-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
