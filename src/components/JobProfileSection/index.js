@@ -6,6 +6,29 @@ import JobCard from '../JobCard'
 import JobsFilterGroup from '../JobsFilterGroup'
 import './index.css'
 
+const locationList = [
+  {
+    label: 'Hyderabad',
+    id: 'Hyderabad',
+  },
+  {
+    label: 'Bangalore',
+    id: 'Bangalore',
+  },
+  {
+    label: 'Chennai',
+    id: 'Chennai',
+  },
+  {
+    label: 'Delhi',
+    id: 'Delhi',
+  },
+  {
+    label: 'Mumbai',
+    id: 'Mumbai',
+  },
+]
+
 const employmentTypesList = [
   {
     label: 'Full Time',
@@ -56,6 +79,7 @@ class JobProfileSection extends Component {
     jobsList: [],
     searchInput: '',
     employmentType: [],
+    locations: [],
     salaryRange: 0,
     apiStatus: apiStatusConstants.initial,
   }
@@ -118,6 +142,18 @@ class JobProfileSection extends Component {
     this.setState({salaryRange: salary}, this.getJobDetails)
   }
 
+  changeLocation = id => {
+    const {locations} = this.state
+    let updatedList
+    if (locations.includes(id)) {
+      updatedList = locations.filter(each => each !== id)
+    } else {
+      updatedList = [...locations, id]
+    }
+    console.log(updatedList)
+    this.setState({locations: updatedList})
+  }
+
   changeEmploymentType = type => {
     const {employmentType} = this.state
     const isTypePresent = employmentType.filter(each => each === type)
@@ -131,8 +167,14 @@ class JobProfileSection extends Component {
   }
 
   renderJobDetails = () => {
-    const {jobsList, searchInput} = this.state
-    const jobsDisplay = jobsList.length > 0
+    const {jobsList, searchInput, locations} = this.state
+    let updatedJobList = jobsList
+    if (locations.length > 0) {
+      updatedJobList = jobsList.filter(each =>
+        locations.includes(each.location),
+      )
+    }
+    const jobsDisplay = updatedJobList.length > 0
 
     return jobsDisplay ? (
       <div className="details-container">
@@ -154,11 +196,11 @@ class JobProfileSection extends Component {
             <BsSearch className="search-icon" />
           </button>
         </div>
-        <ul className="job-details-item-container">
-          {jobsList.map(eachData => (
+        <div className="job-details-item-container">
+          {updatedJobList.map(eachData => (
             <JobCard key={eachData.id} jobDetails={eachData} />
           ))}
-        </ul>
+        </div>
       </div>
     ) : (
       <div className="no-jobs-container">
@@ -249,6 +291,8 @@ class JobProfileSection extends Component {
             searchInput={searchInput}
             changeSearchInput={this.changeSearchInput}
             getJobDetails={this.getJobDetails}
+            locationList={locationList}
+            changeLocation={this.changeLocation}
           />
         </div>
         <div className="responsive-items">

@@ -5,12 +5,17 @@
   justify-content: center;
   align-items: center;
   min-height: 90vh;
+  position: absolute;
+  top: 100px;
+  width: 100vw;
 }
 .full-job-item-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 60px;
+  width: 90%;
+  overflow-x: hidden;
 }
 .profile-loader-container {
   display: flex;
@@ -116,6 +121,8 @@
   font-size: 20px;
   line-height: 2;
 }
+
+
 .skill-heading {
   font-size: 24px;
   color: #fff;
@@ -130,6 +137,14 @@
   list-style-type: none;
   padding-left: 0px;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .skill-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .life-company-heading {
   color: #fff;
@@ -166,4 +181,10 @@
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+  .company-logo {
+    display: none;
+  }
 }

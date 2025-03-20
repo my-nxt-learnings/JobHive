@@ -5,6 +5,14 @@
   width: 370px;
   border-radius: 15px;
 }
+
+@media screen and (max-width: 600px) {
+  .similar-list-docs {
+    max-width: 90%;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+}
 .logo-container {
   display: flex;
   align-items: center;

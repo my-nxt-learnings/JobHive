@@ -2,17 +2,70 @@
   background-color: #0e88a7;
   border-radius: 15px;
   padding: 25px;
-  margin: 15px;
-  width: 800px;
-  margin-right: 60px;
+
+  width: 100%;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
 }
+
 .company-container {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
 }
+
+.location-container-flex-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.location-desc {
+  display: flex;
+}
+
+.left-icon {
+  margin-left: 35px;
+}
+
+.description {
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Roboto';
+  margin-left: 8px;
+}
+@media screen and (max-width: 600px) {
+  .job-list-items {
+    width: 80vw;
+  }
+
+  .company-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .location-container-flex-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .location-desc {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .left-icon {
+    margin-left: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  .description {
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+}
+
 .logo-url {
   width: 70px;
   margin-right: 15px;
@@ -35,18 +88,7 @@
   margin-top: 10px;
   margin-left: 8px;
 }
-.location-container-flex-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.description {
-  color: #fff;
-  font-size: 16px;
-  font-family: 'Roboto';
-  margin-left: 8px;
-}
+
 .star-icon {
   font-size: 25px;
   color: #fbbf24;
@@ -56,15 +98,11 @@
   color: #fff;
   font-size: 30px;
 }
-.location-desc {
-  display: flex;
-}
+
 .star-icon-container {
   margin-right: 10px;
 }
-.left-icon {
-  margin-left: 35px;
-}
+
 .line {
   border: 1px solid #7e858e;
   width: 100%;

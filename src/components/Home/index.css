@@ -7,15 +7,18 @@
 .home-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
   background-size: cover;
-  height: 95vh;
+  min-height: 95vh;
+  top: 100px;
+  position: absolute;
+  width: 100vw;
 }
 .responsive-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 650px;
+  width: 100vw;
   padding: 15px;
-  margin-left: 25px;
+  min-height: 100vh;
 }
 .main-heading {
   font-size: 64px;

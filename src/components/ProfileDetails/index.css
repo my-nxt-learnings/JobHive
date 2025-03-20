@@ -1,11 +1,13 @@
 .profile-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
   background-size: cover;
-  width: 300px;
+
   align-self: flex-start;
   border-radius: 15px;
   padding: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+  width: 100%;
+  min-height: 200px;
 }
 .profile-loader-container {
   display: flex;
